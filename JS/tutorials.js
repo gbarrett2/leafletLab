@@ -1,17 +1,10 @@
 /* My tutorials file */
-// var map = L.map('map').setView([51.505, -0.09], 13);
-// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-//     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-//     maxZoom: 18,
-//
-// }).addTo(map);
-// loadData(map);
 
-/* Example from Leaflet Quick Start Guide*/
 
+//adding map view
 var map = L.map('map').setView([51.505, -0.09], 13);
 
-//add tile layer...replace project id and accessToken with your own
+//add tile layer, can choose/make any type of tile layer
 var layer = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 	subdomains: 'abcd',
@@ -19,6 +12,7 @@ var layer = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/
 	maxZoom: 20,
 	ext: 'png'
 }).addTo(map);
+//addTo(map) - adds to the map
 
 //adds a marker to the map
 var marker = L.marker([51.5, -0.09]).addTo(map);
@@ -43,16 +37,16 @@ circle.bindPopup("I am a circle.");
 polygon.bindPopup("I am a polygon.");
 
 
-//this allows for a popup to happen if you click on the map
+//connects popup to leaflet
 var popup = L.popup();
-
+//this function allows for a popup to happen if you click on the map
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(map);
 }
-
+//adds click function
 map.on('click', onMapClick);
 
 
@@ -201,56 +195,6 @@ L.geoJson(someFeatures, {
         return feature.properties.show_on_map;
     }
 }).addTo(map);
-
-// var marker = L.marker([51.5, -0.09]).addTo(map);
-//
-// var circle = L.circle([51.508, -0.11], 500, {
-//     color: 'red',
-//     fillColor: '#f03',
-//     fillOpacity: 0.5
-// }).addTo(map);
-//
-// var polygon = L.polygon([
-//     [51.509, -0.08],
-//     [51.503, -0.06],
-//     [51.51, -0.047]
-// ]).addTo(map);
-//
-// marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-// circle.bindPopup("I am a circle.");
-// polygon.bindPopup("I am a polygon.");
-//
-// var popup = L.popup()
-//     .setLatLng([51.5, -0.09])
-//     .setContent("I am a standalone popup.")
-//     .openOn(map);
-//
-// var popup = L.popup();
-//
-// function onMapClick(e) {
-//     popup
-//         .setLatLng(e.latlng)
-//         .setContent("You clicked the map at " + e.latlng.toString())
-//         .openOn(map);
-// }
-//
-// map.on('click', onMapClick);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // var map = L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {

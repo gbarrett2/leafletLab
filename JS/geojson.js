@@ -24,6 +24,7 @@
      $.ajax("data/MegaCity.geojson", {
          dataType: "json",
          success: function(response){
+           console.log(mydata);
              //create marker options
              var geojsonMarkerOptions = {
                  radius: 8,

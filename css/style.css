@@ -1,3 +1,14 @@
 
 /* height of the map */
-#map { height: 180px; }
+#map {
+    height: 400px;
+    width: 80%;
+    display: inline-block;
+}
+
+#panel {
+    width: 16%;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+}

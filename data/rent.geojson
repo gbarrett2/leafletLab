@@ -1,0 +1,572 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "San Francisco",
+        "State": "CA",
+        "County": "San Francisco County",
+        "Zip": 94101,
+        "Dec15": 3500,
+        "Oct15": 3620,
+        "Nov15": 3670,
+        "Sept15": 3530,
+        "Aug15": 3500,
+        "July15": 3500,
+        "June15": 3500,
+        "Apr15": 3460,
+        "Mar15": 3400,
+        "Feb15": 3460,
+        "Jan16": 3490
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.417481,
+          37.776646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "New York",
+        "State": "NY",
+        "County": "New York County",
+        "Zip": 10004,
+        "Dec15": 3240,
+        "Oct15": 3230,
+        "Nov15": 3280,
+        "Sept15": 3160,
+        "Aug15": 3100,
+        "July15": 3100,
+        "June15": 3100,
+        "Apr15": 3100,
+        "Mar15": 3000,
+        "Feb15": 3000,
+        "Jan16": 3280
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.018244,
+          40.68863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Boston",
+        "State": "MA",
+        "County": "Suffolk County",
+        "Zip": 2101,
+        "Dec15": 2380,
+        "Oct15": 2300,
+        "Nov15": 2400,
+        "Sept15": 2270,
+        "Aug15": 2250,
+        "July15": 2230,
+        "June15": 2230,
+        "Apr15": 2350,
+        "Mar15": 2280,
+        "Feb15": 2300,
+        "Jan16": 3290
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.026964,
+          42.370567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Oakland",
+        "State": "CA",
+        "County": "Alameda County",
+        "Zip": 94601,
+        "Dec15": 2190,
+        "Oct15": 2080,
+        "Nov15": 2160,
+        "Sept15": 2030,
+        "Aug15": 1980,
+        "July15": 1850,
+        "June15": 1900,
+        "Apr15": 2000,
+        "Mar15": 2000,
+        "Feb15": 1980,
+        "Jan16": 2210
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.223779,
+          37.786027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Washington",
+        "State": "DC",
+        "County": "District of Columbia",
+        "Zip": 20001,
+        "Dec15": 2160,
+        "Oct15": 2090,
+        "Nov15": 2080,
+        "Sept15": 2110,
+        "Aug15": 2150,
+        "July15": 2170,
+        "June15": 2100,
+        "Apr15": 2040,
+        "Mar15": 2000,
+        "Feb15": 2000,
+        "Jan16": 2150
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.016719,
+          38.911936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "San Jose",
+        "State": "CA",
+        "County": "Santa Clara County",
+        "Zip": 95101,
+        "Dec15": 2130,
+        "Oct15": 2270,
+        "Nov15": 2180,
+        "Sept15": 2220,
+        "Aug15": 2230,
+        "July15": 2180,
+        "June15": 2120,
+        "Apr15": 2040,
+        "Mar15": 1880,
+        "Feb15": 1900,
+        "Jan16": 2200
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.705327,
+          37.189396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Chicago",
+        "State": "IL",
+        "County": "Cook County",
+        "Zip": 60601,
+        "Dec15": 1980,
+        "Oct15": 1980,
+        "Nov15": 2050,
+        "Sept15": 1920,
+        "Aug15": 1920,
+        "July15": 1880,
+        "June15": 1780,
+        "Apr15": 1720,
+        "Mar15": 1760,
+        "Feb15": 1670,
+        "Jan16": 1970
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.62213,
+          41.88531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Los Angeles",
+        "State": "CA",
+        "County": "Los Angeles County",
+        "Zip": 90001,
+        "Dec15": 1930,
+        "Oct15": 1840,
+        "Nov15": 1940,
+        "Sept15": 1830,
+        "Aug15": 1750,
+        "July15": 1750,
+        "June15": 1700,
+        "Apr15": 1800,
+        "Mar15": 1730,
+        "Feb15": 1760,
+        "Jan16": 1920
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.248405,
+          33.973951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Miami",
+        "State": "FL",
+        "County": "Miami-Dade County",
+        "Zip": 33231,
+        "Dec15": 1890,
+        "Oct15": 1850,
+        "Nov15": 1870,
+        "Sept15": 1870,
+        "Aug15": 1880,
+        "July15": 1880,
+        "June15": 1850,
+        "Apr15": 1800,
+        "Mar15": 1750,
+        "Feb15": 1750,
+        "Jan16": 1820
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.458168,
+          25.558428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Seattle",
+        "State": "WA",
+        "County": "King County",
+        "Zip": 98060,
+        "Dec15": 1650,
+        "Oct15": 1660,
+        "Nov15": 1710,
+        "Sept15": 1650,
+        "Aug15": 1600,
+        "July15": 1550,
+        "June15": 1600,
+        "Apr15": 1640,
+        "Mar15": 1600,
+        "Feb15": 1630,
+        "Jan16": 1600
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.803388,
+          47.432251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "San Diego",
+        "State": "CA",
+        "County": "San Diego County",
+        "Zip": 92101,
+        "Dec15": 1530,
+        "Oct15": 1540,
+        "Nov15": 1580,
+        "Sept15": 1510,
+        "Aug15": 1500,
+        "July15": 1500,
+        "June15": 1500,
+        "Apr15": 1530,
+        "Mar15": 1480,
+        "Feb15": 1480,
+        "Jan16": 1500
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.170912,
+          32.724103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Portland",
+        "State": "OR",
+        "County": "Multnomah County",
+        "Zip": 97201,
+        "Dec15": 1380,
+        "Oct15": 1360,
+        "Nov15": 1400,
+        "Sept15": 1350,
+        "Aug15": 1330,
+        "July15": 1280,
+        "June15": 1300,
+        "Apr15": 1300,
+        "Mar15": 1300,
+        "Feb15": 1300,
+        "Jan16": 1380
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.690794,
+          45.507856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Denver",
+        "State": "CO",
+        "County": "Denver County",
+        "Zip": 80201,
+        "Dec15": 1320,
+        "Oct15": 1320,
+        "Nov15": 1300,
+        "Sept15": 1280,
+        "Aug15": 1250,
+        "July15": 1220,
+        "June15": 1230,
+        "Apr15": 1320,
+        "Mar15": 1290,
+        "Feb15": 1300,
+        "Jan16": 1250
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.856808,
+          39.726303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Atlanta",
+        "State": "GA",
+        "County": "Fulton County",
+        "Zip": 30301,
+        "Dec15": 1280,
+        "Oct15": 1260,
+        "Nov15": 1290,
+        "Sept15": 1250,
+        "Aug15": 1250,
+        "July15": 1230,
+        "June15": 1200,
+        "Apr15": 1160,
+        "Mar15": 1140,
+        "Feb15": 1150,
+        "Jan16": 1250
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.47405,
+          33.844371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Baltimore",
+        "State": "MD",
+        "County": "Baltimore city",
+        "Zip": 21201,
+        "Dec15": 1250,
+        "Oct15": 1210,
+        "Nov15": 1270,
+        "Sept15": 1220,
+        "Aug15": 1150,
+        "July15": 1050,
+        "June15": 1100,
+        "Apr15": 1120,
+        "Mar15": 1150,
+        "Feb15": 1100,
+        "Jan16": 1210
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.623489,
+          39.296536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Philadelphia",
+        "State": "PA",
+        "County": "Philadelphia County",
+        "Zip": 19019,
+        "Dec15": 1240,
+        "Oct15": 1300,
+        "Nov15": 1300,
+        "Sept15": 1300,
+        "Aug15": 1340,
+        "July15": 1350,
+        "June15": 1350,
+        "Apr15": 1400,
+        "Mar15": 1350,
+        "Feb15": 1350,
+        "Jan16": 1190
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.11787,
+          40.001811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Long Beach",
+        "State": "CA",
+        "County": "Los Angeles County",
+        "Zip": 90801,
+        "Dec15": 1200,
+        "Oct15": 1150,
+        "Nov15": 1200,
+        "Sept15": 1110,
+        "Aug15": 1120,
+        "July15": 1150,
+        "June15": 1200,
+        "Apr15": 1250,
+        "Mar15": 1100,
+        "Feb15": 1100,
+        "Jan16": 1190
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.200957,
+          33.804309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Dallas",
+        "State": "TX",
+        "County": "Dallas County",
+        "Zip": 75201,
+        "Dec15": 1190,
+        "Oct15": 1190,
+        "Nov15": 1220,
+        "Sept15": 1190,
+        "Aug15": 1190,
+        "July15": 1100,
+        "June15": 1060,
+        "Apr15": 1120,
+        "Mar15": 1200,
+        "Feb15": 1150,
+        "Jan16": 1140
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.790329,
+          32.781179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Minneapolis",
+        "State": "MN",
+        "County": "Hennepin County",
+        "Zip": 55401,
+        "Dec15": 1190,
+        "Oct15": 1090,
+        "Nov15": 1130,
+        "Sept15": 1120,
+        "Aug15": 1150,
+        "July15": 1180,
+        "June15": 1220,
+        "Apr15": 1280,
+        "Mar15": 1320,
+        "Feb15": 1320,
+        "Jan16": 1190
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.269097,
+          44.984577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Austin",
+        "State": "TX",
+        "County": "Travis County",
+        "Zip": 73301,
+        "Dec15": 1110,
+        "Oct15": 1120,
+        "Nov15": 1130,
+        "Sept15": 1120,
+        "Aug15": 1170,
+        "July15": 1130,
+        "June15": 1090,
+        "Apr15": 1040,
+        "Mar15": 1030,
+        "Feb15": 1030,
+        "Jan16": 1130
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.771258,
+          30.326374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Houston",
+        "State": "TX",
+        "County": "Harris County",
+        "Zip": 77001,
+        "Dec15": 1040,
+        "Oct15": 1020,
+        "Nov15": 1050,
+        "Sept15": 1020,
+        "Aug15": 980,
+        "July15": 980,
+        "June15": 990,
+        "Apr15": 1010,
+        "Mar15": 1090,
+        "Feb15": 1090,
+        "Jan16": 1010
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.309789,
+          29.813142
+        ]
+      }
+    }
+  ]
+}

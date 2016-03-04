@@ -8,7 +8,11 @@
 
 #panel {
     width: 16%;
-    padding: 20px;
     display: inline-block;
     vertical-align: top;
+}
+
+/* size of popup */
+.leaflet-popup-content p {
+    margin: 0.2em 0;
 }

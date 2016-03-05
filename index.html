@@ -4,11 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<title></title>
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+		<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+		<link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
 
 		<!--put your external stylesheet links here-->
 		<link rel="stylesheet" href="lib/leaflet/leaflet.css" />
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
 		<!--[if IE<9]>
 			<link rel="stylesheet" href="css/style.ie.css">
 		<![endif]-->
@@ -19,15 +21,64 @@
 
 		<!--you can also use this space for internal scripts or stylesheets;
 		place these within <script> or <style> tags-->
+		<style>
+		.menu-ui {
+		  background:#fff;
+		  position:absolute;
+		  top:70px;right:10px;
+		  z-index:1;
+		  border-radius:3px;
+		  width:120px;
+		  border:1px solid rgba(0,0,0,0.4);
+		  }
+		  .menu-ui a {
+		    font-size:13px;
+		    color:#404040;
+		    display:block;
+		    margin:0;padding:0;
+		    padding:10px;
+		    text-decoration:none;
+		    border-bottom:1px solid rgba(0,0,0,0.25);
+		    text-align:center;
+		    }
+		    .menu-ui a:first-child {
+		      border-radius:3px 3px 0 0;
+		      }
+		    .menu-ui a:last-child {
+		      border:none;
+		      border-radius:0 0 3px 3px;
+		      }
+		    .menu-ui a:hover {
+		      background:#f8f8f8;
+		      color:#404040;
+		      }
+		    .menu-ui a.active,
+		    .menu-ui a.active:hover {
+		      background:#3887BE;
+		      color:#FFF;
+		      }
+		</style>
 
 		<!--put your external script links here-->
-
+		<nav class='menu-ui'>
+		  <a href='#' class='active' data-filter='all'>Show all</a>
+		  <a href='#' data-filter='schools'>Cities with the Best Schools</a>
+		  <a href='#' data-filter='population'>Cities with the Largest Population</a>
+		  <a href='#' data-filter='transportation'>Cities with the Best Transportation</a>
+		</nav>
  		<div id="map"></div>
 		<div id="panel"></div>
 		<div id="mydiv"> </div>
 		<script type="text/javascript" src="lib/leaflet/leaflet.js"></script>
 		<script type="text/javascript" src="lib/jquery-1.12.0.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
+		<script>
+		// Provide your access token
+		L.mapbox.accessToken = 'pk.eyJ1IjoiZ2FiYmFycmV0dCIsImEiOiJjaWkwZ2k2M3gwNHJodGdtMTI1b3RjbXh4In0.qeUTliZkx4CETfBpfigaOg';
+		// Create a map in the div #map
+		L.mapbox.map('map', 'mapbox.streets');
+		</script>
+		Slider changes average rent for a one bedroom by month from December 2015 to January 2016.
 
 	</body>
 </html>

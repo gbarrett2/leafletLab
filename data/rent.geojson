@@ -1,3 +1,4 @@
+
 {
   "type": "FeatureCollection",
   "features": [
@@ -5,6 +6,9 @@
       "type": "Feature",
       "properties": {
         "City": "San Francisco",
+        "schools": true,
+        "pop": false,
+        "transportation": false,
         "State": "CA",
         "County": "San Francisco County",
         "Zip": 94101,
@@ -32,6 +36,9 @@
       "type": "Feature",
       "properties": {
         "City": "New York",
+        "schools": false,
+        "pop": true,
+        "transportation": true,
         "State": "NY",
         "County": "New York County",
         "Zip": 10004,
@@ -59,6 +66,9 @@
       "type": "Feature",
       "properties": {
         "City": "Boston",
+        "schools": true,
+        "pop": true,
+        "transportation": false,
         "State": "MA",
         "County": "Suffolk County",
         "Zip": 2101,
@@ -86,6 +96,9 @@
       "type": "Feature",
       "properties": {
         "City": "Oakland",
+        "schools": false,
+        "pop": false,
+        "transportation": false,
         "State": "CA",
         "County": "Alameda County",
         "Zip": 94601,
@@ -113,6 +126,9 @@
       "type": "Feature",
       "properties": {
         "City": "Washington",
+        "schools": true,
+        "pop": false,
+        "transportation": false,
         "State": "DC",
         "County": "District of Columbia",
         "Zip": 20001,
@@ -140,6 +156,9 @@
       "type": "Feature",
       "properties": {
         "City": "San Jose",
+        "schools": false,
+        "pop": false,
+        "transportation": true,
         "State": "CA",
         "County": "Santa Clara County",
         "Zip": 95101,
@@ -167,6 +186,9 @@
       "type": "Feature",
       "properties": {
         "City": "Chicago",
+        "schools": true,
+        "pop": true,
+        "transportation": false,
         "State": "IL",
         "County": "Cook County",
         "Zip": 60601,
@@ -194,6 +216,9 @@
       "type": "Feature",
       "properties": {
         "City": "Los Angeles",
+        "schools": false,
+        "pop": true,
+        "transportation": true,
         "State": "CA",
         "County": "Los Angeles County",
         "Zip": 90001,
@@ -221,6 +246,9 @@
       "type": "Feature",
       "properties": {
         "City": "Miami",
+        "schools": false,
+        "pop": false,
+        "transportation": false,
         "State": "FL",
         "County": "Miami-Dade County",
         "Zip": 33231,
@@ -248,6 +276,9 @@
       "type": "Feature",
       "properties": {
         "City": "Seattle",
+        "schools": false,
+        "pop": false,
+        "transportation": true,
         "State": "WA",
         "County": "King County",
         "Zip": 98060,
@@ -275,6 +306,9 @@
       "type": "Feature",
       "properties": {
         "City": "San Diego",
+        "schools": false,
+        "pop": false,
+        "transportation": true,
         "State": "CA",
         "County": "San Diego County",
         "Zip": 92101,
@@ -302,6 +336,9 @@
       "type": "Feature",
       "properties": {
         "City": "Portland",
+        "schools": false,
+        "pop": false,
+        "transportation": true,
         "State": "OR",
         "County": "Multnomah County",
         "Zip": 97201,
@@ -329,6 +366,9 @@
       "type": "Feature",
       "properties": {
         "City": "Denver",
+        "schools": false,
+        "pop": false,
+        "transportation": true,
         "State": "CO",
         "County": "Denver County",
         "Zip": 80201,
@@ -356,6 +396,9 @@
       "type": "Feature",
       "properties": {
         "City": "Atlanta",
+        "schools": false,
+        "pop": false,
+        "transportation": false,
         "State": "GA",
         "County": "Fulton County",
         "Zip": 30301,
@@ -383,6 +426,9 @@
       "type": "Feature",
       "properties": {
         "City": "Baltimore",
+        "schools": false,
+        "pop": false,
+        "transportation": false,
         "State": "MD",
         "County": "Baltimore city",
         "Zip": 21201,
@@ -410,6 +456,9 @@
       "type": "Feature",
       "properties": {
         "City": "Philadelphia",
+        "schools": false,
+        "pop": true,
+        "transportation": false,
         "State": "PA",
         "County": "Philadelphia County",
         "Zip": 19019,
@@ -437,6 +486,9 @@
       "type": "Feature",
       "properties": {
         "City": "Long Beach",
+        "schools": false,
+        "pop": false,
+        "transportation": false,
         "State": "CA",
         "County": "Los Angeles County",
         "Zip": 90801,
@@ -464,6 +516,9 @@
       "type": "Feature",
       "properties": {
         "City": "Dallas",
+        "schools": false,
+        "pop": false,
+        "transportation": false,
         "State": "TX",
         "County": "Dallas County",
         "Zip": 75201,
@@ -491,6 +546,9 @@
       "type": "Feature",
       "properties": {
         "City": "Minneapolis",
+        "schools": false,
+        "pop": false,
+        "transportation": false,
         "State": "MN",
         "County": "Hennepin County",
         "Zip": 55401,
@@ -518,6 +576,9 @@
       "type": "Feature",
       "properties": {
         "City": "Austin",
+        "schools": true,
+        "pop": false,
+        "transportation": false,
         "State": "TX",
         "County": "Travis County",
         "Zip": 73301,
@@ -545,6 +606,9 @@
       "type": "Feature",
       "properties": {
         "City": "Houston",
+        "schools": false,
+        "pop": true,
+        "transportation": false,
         "State": "TX",
         "County": "Harris County",
         "Zip": 77001,

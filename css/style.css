@@ -79,7 +79,14 @@ p{
 }
 
 h1{
-  font-size: 25px;
+  font-size: 20px;
   font-family:sans-serif;
   color: black;
+}
+
+a:link{
+  color:white;
+}
+a:hover{
+  color:purple;
 }

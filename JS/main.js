@@ -166,9 +166,9 @@ function pointToLayer(feature, latlng, attributes){
     //create circle marker layer
     var layer = L.circleMarker(latlng, options);
 
-    //Example 2.1 line 27...bind the popup to the circle marker
+    //bind the popup to the circle marker
      layer.bindPopup(popupContent);
-     //original popupContent changed to panelContent...Example 2.2 line 1
+     //original popupContent changed to panelContent
 
          //popup content is now just the city name
          var popupContent = "<p><b>City:</b> " + feature.properties.City + "</p>";
@@ -257,8 +257,7 @@ function createSequenceControls(map){
             $(container).append('<button class="skip" id="reverse" title="Reverse">Reverse</button>');
             $(container).append('<button class="skip" id="forward" title="Forward">Skip</button>');
 
-            //  $('#reverse').html('<img src="data/reversearrow.png">');
-            //  $('#forward').html('<img src="data/forwardarrow.png">');
+
 
               //kill any mouse event listeners on the map
               $(container).on('mousedown dblclick', function(e){
@@ -268,7 +267,7 @@ function createSequenceControls(map){
             return container;
         }
     });
-
+//range of slider
     map.addControl(new SequenceControl());
    $('.range-slider').attr({
        max: 6,
@@ -276,6 +275,8 @@ function createSequenceControls(map){
        value: 0,
        step: 1
    });
+
+
     //Step 5: click listener for buttons
     $('.skip').click(function(){
       //get the old index value

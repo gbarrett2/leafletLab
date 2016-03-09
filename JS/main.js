@@ -65,7 +65,7 @@ function createMap(){
 }).addTo(map);
     //call getData function
     getData(map);
-    createLegend(map,attributes);
+
 };
 
 
@@ -106,7 +106,7 @@ function getData(map){
             //call function to create proportional symbols
             createPropSymbols(response, map, attributes);
             createSequenceControls(map, attributes);
-
+            createLegend(map,attributes);
         }
     });
 };
@@ -366,14 +366,14 @@ function createLegend(map, attributes){
               min: 60
             };
 
-     //loop to add each circle and text to svg string
-     for (var circle in circles){
-         //circle string
-         svg += '<circle class="legend-circle" id="' + circle + '" fill="#F47821" fill-opacity="0.8" stroke="#000000" cx="30"/>';
+            //loop to add each circle and text to svg string
+               for (var circle in circles){
+                   //circle string
+                   svg += '<circle class="legend-circle" id="' + circle + '" fill="#ff7800" fill-opacity="0.8" stroke="black" cx="40"/>';
 
-         //text string
-         svg += '<text id="' + circle + '-text" x="65" y="' + circles[circle] + '"></text>';
-          };
+                   //text string
+                   svg += '<text id="' + circle + '-text" x="100" y="' + circles[circle] + '"></text>';
+               };
           svg += "</svg>";
             //add attribute legend svg to container
             $(container).append(svg);
@@ -382,7 +382,6 @@ function createLegend(map, attributes){
     });
 
     map.addControl(new LegendControl());
-
     updateLegend(map, attributes[0]);
 };
 
@@ -432,15 +431,22 @@ function updateLegend(map, attribute){
     //replace legend content
     $('#temporal-legend').html(content);
 
+
+
+
+
+
+
     //get the max, mean, and min values as an object
     var circleValues = getCircleValues(map, attribute);
     //console.log(attributes[1]);
     for (var key in circleValues){
         //get the radius
         var radius = calcPropRadius(circleValues[key]);
+
         //Step 3: assign the cy and r attributes
         $('#'+key).attr({
-            cy: 59 - radius,
+            cy: 70 - radius,
             r: radius
         });
         //Step 4: add legend text

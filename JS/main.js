@@ -8,7 +8,6 @@
 //6. Give each feature's circle marker a radius based on its attribute value
 
   var attributes = [];
-
 //Step 1:
 //function to instantiate the Leaflet map
 function createMap(){
@@ -57,13 +56,13 @@ function createMap(){
 // });
 
     //add OSM base tilelayer
-    var CartoDB_PositronNoLabels = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-maxZoom: 18,
-attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-id: 'mapbox.streets'
-    }).addTo(map);
+    var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+}).addTo(map);
     //call getData function
     getData(map);
     createLegend(map,attributes);
@@ -134,7 +133,7 @@ function processData(data){
 //calculate the radius of each proportional symbol
 function calcPropRadius(attValue) {
     //scale factor to adjust symbol size evenly
-    var scaleFactor = 0.6;
+    var scaleFactor = 1;
     //area based on attribute value and scale factor
     var area = attValue * scaleFactor;
     //radius calculated based on area
@@ -371,7 +370,7 @@ function createLegend(map, attributes){
 
 
             //Step 1: start attribute legend svg string
-            var svg = '<svg id="attribute-legend" width="180px" height="180px">';
+            var svg = '<svg id="attribute-legend" width="160px" height="60px">';
 
             var circles = {
               max: 20,
@@ -386,12 +385,10 @@ function createLegend(map, attributes){
 
          //text string
          svg += '<text id="' + circle + '-text" x="65" y="' + circles[circle] + '"></text>';
-     };
-     svg += "</svg>";
-
+          };
+          svg += "</svg>";
             //add attribute legend svg to container
             $(container).append(svg);
-
             return container;
         }
     });
@@ -402,31 +399,7 @@ function createLegend(map, attributes){
 };
 
 
-//Update the legend with new attribute
-function updateLegend(map, attribute){
-    //create content for legend
-    var month = attribute.split("_")[2];
-    console.log(attribute);
-    var content = "Rent in " + month;
 
-    //replace legend content
-    $('#temporal-legend').html(content);
-
-    //get the max, mean, and min values as an object
-    var circleValues = getCircleValues(map, attribute);
-    //console.log(attributes[1]);
-    for (var key in circleValues){
-        //get the radius
-        var radius = calcPropRadius(circleValues[key]);
-        //Step 3: assign the cy and r attributes
-        $('#'+key).attr({
-            cy: 59 - radius,
-            r: radius
-        });
-        //Step 4: add legend text
-        $('#'+key+'-text').text(Math.round(circleValues[key]*100)/100 + " dollars");
-    };
-};
 
 //Calculate the max, mean, and min values for a given attribute
 function getCircleValues(map, attribute){
@@ -461,6 +434,30 @@ function getCircleValues(map, attribute){
         min: min
     };
 };
+//Update the legend with new attribute
+function updateLegend(map, attribute){
+    //create content for legend
 
+    var year = attribute.split("_")[2];
+    var content = "Rent in " + year;
+
+    //replace legend content
+    $('#temporal-legend').html(content);
+
+    //get the max, mean, and min values as an object
+    var circleValues = getCircleValues(map, attribute);
+    //console.log(attributes[1]);
+    for (var key in circleValues){
+        //get the radius
+        var radius = calcPropRadius(circleValues[key]);
+        //Step 3: assign the cy and r attributes
+        $('#'+key).attr({
+            cy: 59 - radius,
+            r: radius
+        });
+        //Step 4: add legend text
+        $('#'+key+'-text').text(Math.round(circleValues[key]*100)/100 + " dollars");
+    };
+};
 
 $(document).ready(createMap);

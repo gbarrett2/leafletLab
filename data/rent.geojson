@@ -1,4 +1,3 @@
-
 {
   "type": "FeatureCollection",
   "features": [
@@ -12,17 +11,17 @@
         "State": "CA",
         "County": "San Francisco County",
         "Zip": 94101,
+        "Rent_For_Jan16": 3490,
         "Rent_For_Dec15": 3500,
-        "Rent_For_Oct15": 3620,
         "Rent_For_Nov15": 3670,
+        "Rent_For_Oct15": 3620,
         "Rent_For_Sept15": 3530,
         "Rent_For_Aug15": 3500,
         "Rent_For_July15": 3500,
         "Rent_For_June15": 3500,
         "Rent_For_Apr15": 3460,
         "Rent_For_Mar15": 3400,
-        "Rent_For_Feb15": 3460,
-        "Rent_For_Jan16": 3490
+        "Rent_For_Feb15": 3460
       },
       "geometry": {
         "type": "Point",
@@ -42,17 +41,17 @@
         "State": "NY",
         "County": "New York County",
         "Zip": 10004,
+        "Rent_For_Jan16": 3280,
         "Rent_For_Dec15": 3240,
-        "Rent_For_Oct15": 3230,
         "Rent_For_Nov15": 3280,
+        "Rent_For_Oct15": 3230,
         "Rent_For_Sept15": 3160,
         "Rent_For_Aug15": 3100,
         "Rent_For_July15": 3100,
         "Rent_For_June15": 3100,
         "Rent_For_Apr15": 3100,
         "Rent_For_Mar15": 3000,
-        "Rent_For_Feb15": 3000,
-        "Rent_For_Jan16": 3280
+        "Rent_For_Feb15": 3000
       },
       "geometry": {
         "type": "Point",
@@ -72,17 +71,17 @@
         "State": "MA",
         "County": "Suffolk County",
         "Zip": 2101,
+        "Rent_For_Jan16": 3290,
         "Rent_For_Dec15": 2380,
-        "Rent_For_Oct15": 2300,
         "Rent_For_Nov15": 2400,
+        "Rent_For_Oct15": 2300,
         "Rent_For_Sept15": 2270,
         "Rent_For_Aug15": 2250,
         "Rent_For_July15": 2230,
         "Rent_For_June15": 2230,
         "Rent_For_Apr15": 2350,
         "Rent_For_Mar15": 2280,
-        "Rent_For_Feb15": 2300,
-        "Rent_For_Jan16": 3290
+        "Rent_For_Feb15": 2300
       },
       "geometry": {
         "type": "Point",
@@ -102,17 +101,17 @@
         "State": "CA",
         "County": "Alameda County",
         "Zip": 94601,
+        "Rent_For_Jan16": 2210,
         "Rent_For_Dec15": 2190,
-        "Rent_For_Oct15": 2080,
         "Rent_For_Nov15": 2160,
+        "Rent_For_Oct15": 2080,
         "Rent_For_Sept15": 2030,
         "Rent_For_Aug15": 1980,
         "Rent_For_July15": 1850,
         "Rent_For_June15": 1900,
         "Rent_For_Apr15": 2000,
         "Rent_For_Mar15": 2000,
-        "Rent_For_Feb15": 1980,
-        "Rent_For_Jan16": 2210
+        "Rent_For_Feb15": 1980
       },
       "geometry": {
         "type": "Point",
@@ -132,17 +131,17 @@
         "State": "DC",
         "County": "District of Columbia",
         "Zip": 20001,
+        "Rent_For_Jan16": 2150,
         "Rent_For_Dec15": 2160,
-        "Rent_For_Oct15": 2090,
         "Rent_For_Nov15": 2080,
+        "Rent_For_Oct15": 2090,
         "Rent_For_Sept15": 2110,
         "Rent_For_Aug15": 2150,
         "Rent_For_July15": 2170,
         "Rent_For_June15": 2100,
         "Rent_For_Apr15": 2040,
         "Rent_For_Mar15": 2000,
-        "Rent_For_Feb15": 2000,
-        "Rent_For_Jan16": 2150
+        "Rent_For_Feb15": 2000
       },
       "geometry": {
         "type": "Point",

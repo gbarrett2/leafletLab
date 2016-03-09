@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<title></title>
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 		<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
 		<link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
@@ -17,6 +16,7 @@
 	</head>
 
 	<body>
+
 		<!--put your initial page content here-->
 
 		<!--you can also use this space for internal scripts or stylesheets;
@@ -58,7 +58,8 @@
 		      color:#FFF;
 		      }
 		</style>
-
+		<div id="header"></div>
+				<title>Rent in the Most Expensive Cities in the United States</title>
 		<!--put your external script links here-->
 		<!-- <nav class='menu-ui'>
 		  <a href='#' class='active' data-filter='all'>Show all</a>
@@ -75,13 +76,16 @@
 		<script type="text/javascript" src="lib/jquery-1.12.0.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script>
-		// // Provide your access token
-		// L.mapbox.accessToken = 'pk.eyJ1IjoiZ2FiYmFycmV0dCIsImEiOiJjaWkwZ2k2M3gwNHJodGdtMTI1b3RjbXh4In0.qeUTliZkx4CETfBpfigaOg';
-		// // Create a map in the div #map
-		// L.mapbox.map('map', 'mapbox.streets');
 		</script>
-		This map shows the rent of one bedroom apartments in the most expensive cities in the US.
-		The slider changes average rent for a one bedroom by month from December 2015 to January 2016.
+		<div id="div1">
+		<p id="p1">This map portrays the average cost of rent of one bedroom apartments in each city.  One can use the slider to see the average rent change starting from January 2016 and going back in time to February.  Using the slider bar we can see that there is a minor decrease in the proportional symbol size.  Meaning that rent has increased over time in the majority of cities.  There are no drastic changes in the proportional symbols. Over the duration of the year the top three most expensive cities; San Francisco, New York and Boston, remained in this order throughout the year while other cities changed order.  The biggest change was in Boston which increased by $990.  The top 9 cities all had their rents increase and only 5 out of the 21 cities had a decrease over the time period.  </p>
+		<p id="p2">The reason for the minimal but slight increase in rent in cities has to do with supply and demand.  Today more and more young millennials want to move to the city due to jobs, convenience and economic reasons.   Since the workforce is moving into the city, there is a lack of space and in return more expensive rents.</p>
+		<p id="p3">Note:
+		There was no data from the month of May in 2015.</p>
+		<br id="p4">Data Sources:
+			<br id = "l1">Zumper National Rent Report <a href>https://www.zumper.com</a><br>Cities with biggest rent hikes <a href>http://money.cnn.com/2015/10/19/pf/cities-largest-rent-increases/</a><br>Rising Rents Outpace Wages in Wide Swaths of the U.S. <a href>http://www.wsj.com/articles/rising-rents-outpace-wages-in-wide-swaths-of-the-u-s-1438117026</a> </br></p>
+		</div>
+</body>
 
 	</body>
 </html>

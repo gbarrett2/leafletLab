@@ -18,22 +18,22 @@ function createMap(){
         zoom: 4
     });
 
-     L.geoJson(rent, {
-         filter: function(feature, layer) {
-           if(filter = "schools"){
-            return feature.properties.schools;
-          }
-          if(filter = "pop"){
-            return feature.properties.pop;
-          }
-          if(filter = "transportation"){
-            return feature.properties.transportation;
-          }
-          else {
-            return false;
-          }
-         }
-     }).addTo(map);
+    //  L.geoJson(rent, {
+    //      filter: function(feature, layer) {
+    //        if(filter = "schools"){
+    //         return feature.properties.schools;
+    //       }
+    //       else if(filter = "pop"){
+    //         return feature.properties.pop;
+    //       }
+    //       else if(filter = "transportation"){
+    //         return feature.properties.transportation;
+    //       }
+    //       else {
+    //         return false;
+    //       }
+    //      }
+    //  }).addTo(map);
 
      //
     //  L.geoJson(rent, {
@@ -42,26 +42,19 @@ function createMap(){
     //      }
     //  }).addTo(map);
 
-    //
-    // var map = L.mapbox.map('map', 'mapbox.streets')
-    //   .setView([38, -97], 4)
-    //
-    //  var markers = L.mapbox.featureLayer()
-    //      .setGeoJSON(geojson)
-    //      .addTo(map);
 
-    $('.menu-ui a').on('click', function() {
-    // For each filter link, get the 'data-filter' attribute value.
-    var filter = $(this).data('filter');
-    $(this).addClass('active').siblings().removeClass('active');
-    markers.setFilter(function(f) {
-        // If the data-filter attribute is set to "all", return
-        // all (true). Otherwise, filter on markers that have
-        // a value set to true based on the filter name.
-        return (filter === 'all') ? true : f.properties[filter] === true;
-    });
-    return false;
-});
+//     $('.menu-ui a').on('click', function() {
+//     // For each filter link, get the 'data-filter' attribute value.
+//     var filter = $(this).data('filter');
+//     $(this).addClass('active').siblings().removeClass('active');
+//     markers.setFilter(function(f) {
+//         // If the data-filter attribute is set to "all", return
+//         // all (true). Otherwise, filter on markers that have
+//         // a value set to true based on the filter name.
+//         return (filter === 'all') ? true : f.properties[filter] === true;
+//     });
+//     return false;
+// });
 
     //add OSM base tilelayer
     var CartoDB_PositronNoLabels = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
@@ -73,6 +66,9 @@ id: 'mapbox.streets'
     }).addTo(map);
     //call getData function
     getData(map);
+    createLegend(map,attributes);
+    getCircleValues(map, attribute);
+    updateLegend(map, attribute);
 };
 
 
@@ -138,7 +134,7 @@ function processData(data){
 //calculate the radius of each proportional symbol
 function calcPropRadius(attValue) {
     //scale factor to adjust symbol size evenly
-    var scaleFactor = 0.4;
+    var scaleFactor = 0.6;
     //area based on attribute value and scale factor
     var area = attValue * scaleFactor;
     //radius calculated based on area
@@ -164,7 +160,7 @@ function pointToLayer(feature, latlng, attributes){
     };
 
     //For each feature, determine its value for the selected attribute
-    var attValue = Number(feature.properties.Rent_For_Dec15);
+    var attValue = Number(feature.properties[attribute]);
 
 
     //Give each feature's circle marker a radius based on its attribute value
@@ -181,7 +177,7 @@ function pointToLayer(feature, latlng, attributes){
          var popupContent = "<p><b>City:</b> " + feature.properties.City + "</p>";
 
 
-         var year = attribute.split("_")[1];
+         var year = attribute.split("_")[2];
          popupContent += "<p><b>" + attribute + ": </b> " +
          feature.properties[attribute] + "</p>";
 
@@ -208,10 +204,6 @@ function pointToLayer(feature, latlng, attributes){
             $("#panel").html(panelContent);
         }
      });
-     //Example 2.5 line 1...bind the popup to the circle marker
-   layer.bindPopup(popupContent, {
-       offset: new L.Point(0,-options.radius)
-   });
 
     //return the circle marker to the L.geoJson pointToLayer option
     return layer;
@@ -254,15 +246,41 @@ function createPropSymbols(data, map, attributes){
 
 //Step 1: Create new sequence controls
 function createSequenceControls(map){
-    //create range input element (slider)
-    $('#panel').append('<input class="range-slider" type="range">');
-    //below Example 3.4...add skip buttons
-    $('#panel').append('<button class="skip" id="reverse">Reverse</button>');
-    $('#panel').append('<button class="skip" id="forward">Skip</button>');
+    // //create range input element (slider)
+    // $('#panel').append('<input class="range-slider" type="range">');
+    // //below Example 3.4...add skip buttons
+    // $('#panel').append('<button class="skip" id="reverse">Reverse</button>');
+    // $('#panel').append('<button class="skip" id="forward">Skip</button>');
     //Below Example 3.5...replace button content with images
     //   $('#reverse').html('<img src="data/reversearrow.png">');
     //   $('#forward').html('<img src="data/forwardarrow.png">');
     //set slider attributes
+
+    var SequenceControl = L.Control.extend({
+        options: {
+            position: 'bottomleft'
+        },
+
+        onAdd: function (map) {
+            // create the control container div with a particular class name
+            var container = L.DomUtil.create('div', 'sequence-control-container');
+            //create range input element (slider)
+            $(container).append('<input class="range-slider" type="range">');
+            //add skip buttons
+            $(container).append('<button class="skip" id="reverse" title="Reverse">Reverse</button>');
+            $(container).append('<button class="skip" id="forward" title="Forward">Skip</button>');
+            // ... initialize other DOM elements, add listeners, etc.
+
+              //kill any mouse event listeners on the map
+              $(container).on('mousedown dblclick', function(e){
+                  L.DomEvent.stopPropagation(e);
+              });
+
+            return container;
+        }
+    });
+
+    map.addControl(new SequenceControl());
    $('.range-slider').attr({
        max: 6,
        min: 0,
@@ -297,6 +315,10 @@ function createSequenceControls(map){
         //Step 6: get the new index value
         index = $(this).val();
     });
+
+
+
+
 };
 //Called in both skip button and slider event listener handlers
 //Step 9: pass new attribute to update symbols
@@ -316,284 +338,129 @@ function updatePropSymbols(map, attribute){
            var popupContent = "<p><b>City:</b> " + props.City + "</p>";
 
            //add formatted attribute to panel content string
-           var month = attribute.split("_")[1];
+           var month = attribute.split("_")[2];
+
            popupContent += "<p><b>Rent " + month + ":</b> " + props[attribute] + " dollars</p>";
 
         //   "</p><p><b>" + attribute + ": </b> " + feature.properties.Rent_For_Dec15 + "</p>"
 
       //  "<p><b>City:</b> " + feature.properties.City + "</p><p><b>" + attribute + ": </b> " +
         //feature.properties.attribute + "</p>"
-
-
-
-
            //replace the layer popup
            layer.bindPopup(popupContent, {
                offset: new L.Point(0,-radius)
            });
     };
 });
+updateLegend(map, attribute);
 };
 
-var rent = [{
-    "type": "Feature",
-    "properties": {
-        "city": "Austin",
-        "schools": true,
-        "pop" : false,
-        "transportation" : false,
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-97.771258, 30.326374]
-    }
-}, {
-    "type": "Feature",
-    "properties": {
-      "City": "San Francisco",
-      "schools": true,
-      "pop": false,
-      "transportation": false,
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-122.417481, 37.776646]
-    }
-  },
-  {
-      "type": "Feature",
-      "properties": {
-        "City": "New York",
-        "schools": false,
-        "pop": true,
-        "transportation": true,
-      },
-      "geometry": {
-          "type": "Point",
-          "coordinates": [-74.018244, 40.68863]
-      }
-  }, {
-      "type": "Feature",
-      "properties": {
-        "City": "Boston",
-        "schools": true,
-        "pop": true,
-        "transportation": false,
-      },
-      "geometry": {
-          "type": "Point",
-          "coordinates": [-71.026964, 42.370567]
-      }
-    },{
-        "type": "Feature",
-        "properties": {
-          "City": "Oakland",
-          "schools": false,
-          "pop": false,
-          "transportation": false,
+//Example 2.7 line 1...function to create the legend
+function createLegend(map, attributes){
+    var LegendControl = L.Control.extend({
+        options: {
+            position: 'bottomright'
         },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-122.223779, 37.786027]
+
+        onAdd: function(map) {
+            // create the control container with a particular class name
+            var container = L.DomUtil.create('div', 'legend-control-container');
+
+            //add temporal legend div to container
+            $(container).append('<div id="temporal-legend">')
+
+
+            //Step 1: start attribute legend svg string
+            var svg = '<svg id="attribute-legend" width="180px" height="180px">';
+
+            var circles = {
+              max: 20,
+              mean: 40,
+              min: 60
+            };
+
+     //loop to add each circle and text to svg string
+     for (var circle in circles){
+         //circle string
+         svg += '<circle class="legend-circle" id="' + circle + '" fill="#F47821" fill-opacity="0.8" stroke="#000000" cx="30"/>';
+
+         //text string
+         svg += '<text id="' + circle + '-text" x="65" y="' + circles[circle] + '"></text>';
+     };
+     svg += "</svg>";
+
+            //add attribute legend svg to container
+            $(container).append(svg);
+
+            return container;
         }
-    }, {
-        "type": "Feature",
-        "properties": {
-          "City": "Washington",
-          "schools": true,
-          "pop": false,
-          "transportation": false,
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-77.016719, 38.911936]
-        }
-      },{
-            "type": "Feature",
-            "properties": {
-              "City": "San Jose",
-              "schools": false,
-              "pop": false,
-              "transportation": true,
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-121.705327, 37.189396]
-            }
-        }, {
-            "type": "Feature",
-            "properties": {
-              "City": "Chicago",
-              "schools": true,
-              "pop": true,
-              "transportation": false,
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-87.62213, 41.88531]
-            }
-          },{
-              "type": "Feature",
-              "properties": {
-                "City": "Los Angeles",
-                "schools": false,
-                "pop": true,
-                "transportation": true,
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [-118.248405, 33.973951]
-              }
-          }, {
-              "type": "Feature",
-              "properties": {
-                "City": "Miami",
-                "schools": false,
-                "pop": false,
-                "transportation": false,
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [-80.458168, 25.558428]
-              }
-            },{
-                  "type": "Feature",
-                  "properties": {
-                    "City": "Seattle",
-                    "schools": false,
-                    "pop": false,
-                    "transportation": true,
-                  },
-                  "geometry": {
-                      "type": "Point",
-                      "coordinates": [  -121.803388,
-                        47.432251]
-                  }
-              }, {
-                  "type": "Feature",
-                  "properties": {
-                    "City": "San Diego",
-                    "schools": false,
-                    "pop": false,
-                    "transportation": true,
-                  },
-                  "geometry": {
-                      "type": "Point",
-                      "coordinates": [  -117.170912,
-                        32.724103]
-                  }
-                }, {
-                    "type": "Feature",
-                    "properties": {
-                      "City": "Denver",
-                      "schools": false,
-                      "pop": false,
-                      "transportation": true,
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [    -104.856808,
-                            39.726303]
-                    }
-                }, {
-                    "type": "Feature",
-                    "properties": {
-                      "City": "Atlanta",
-                      "schools": false,
-                      "pop": false,
-                      "transportation": false,
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [  -84.47405,
-                          33.844371]
-                    }
-                  },{
-                      "type": "Feature",
-                      "properties": {
-                        "City": "Baltimore",
-                        "schools": false,
-                        "pop": false,
-                        "transportation": false,
-                      },
-                      "geometry": {
-                          "type": "Point",
-                          "coordinates": [  -76.623489,
-                            39.296536]
-                      }
-                  }, {
-                      "type": "Feature",
-                      "properties": {
-                        "City": "Philadelphia",
-                        "schools": false,
-                        "pop": true,
-                        "transportation": false,
-                      },
-                      "geometry": {
-                          "type": "Point",
-                          "coordinates": [    -75.11787,
-                              40.001811]
-                      }
-                    },{
-                          "type": "Feature",
-                          "properties": {
-                            "City": "Long Beach",
-                            "schools": false,
-                            "pop": false,
-                            "transportation": false,
-                          },
-                          "geometry": {
-                              "type": "Point",
-                              "coordinates": [-118.200957,
-                              33.804309]
-                          }
-                      }, {
-                          "type": "Feature",
-                          "properties": {
-                            "City": "Dallas",
-                            "schools": false,
-                            "pop": false,
-                            "transportation": false,
-                          },
-                          "geometry": {
-                              "type": "Point",
-                              "coordinates": [-96.790329,
-                              32.781179]
-                          }
-                        },{
-                            "type": "Feature",
-                            "properties": {
-                              "City": "Minneapolis",
-                              "schools": false,
-                              "pop": false,
-                              "transportation": false,
-                            },
-                            "geometry": {
-                                "type": "Point",
-                                "coordinates": [  -93.269097,
-                                  44.984577]
-                            }
-                        }, {
-                            "type": "Feature",
-                            "properties": {
-                              "City": "Houston",
-                              "schools": false,
-                              "pop": true,
-                              "transportation": false,
-                            },
-                            "geometry": {
-                                "type": "Point",
-                                "coordinates": [-95.309789,
-                                29.813142]
-                            }
-}];
+    });
+
+    map.addControl(new LegendControl());
+
+    updateLegend(map, attributes[0]);
+};
 
 
+//Update the legend with new attribute
+function updateLegend(map, attribute){
+    //create content for legend
+    var month = attribute.split("_")[2];
+    console.log(attribute);
+    var content = "Rent in " + month;
 
+    //replace legend content
+    $('#temporal-legend').html(content);
 
+    //get the max, mean, and min values as an object
+    var circleValues = getCircleValues(map, attribute);
+    //console.log(attributes[1]);
+    for (var key in circleValues){
+        //get the radius
+        var radius = calcPropRadius(circleValues[key]);
+        //Step 3: assign the cy and r attributes
+        $('#'+key).attr({
+            cy: 59 - radius,
+            r: radius
+        });
+        //Step 4: add legend text
+        $('#'+key+'-text').text(Math.round(circleValues[key]*100)/100 + " dollars");
+    };
+};
 
+//Calculate the max, mean, and min values for a given attribute
+function getCircleValues(map, attribute){
+    //start with min at highest possible and max at lowest possible number
+    var min = Infinity,
+        max = -Infinity;
 
+    map.eachLayer(function(layer){
+        //get the attribute value
+        if (layer.feature){
+            var attributeValue = Number(layer.feature.properties[attribute]);
+            console.log(layer.feature.properties[attribute]);
+            //test for min
+            if (attributeValue < min){
+                min = attributeValue;
+            };
 
+            //test for max
+            if (attributeValue > max){
+                max = attributeValue;
+            };
+        };
+    });
+
+    //set mean
+    var mean = (max + min) / 2;
+
+    //return values as an object
+    return {
+        max: max,
+        mean: mean,
+        min: min
+    };
+};
 
 
 $(document).ready(createMap);

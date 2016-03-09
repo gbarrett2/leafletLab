@@ -171,3 +171,261 @@ function getData(map){
         }
     });
 };
+
+
+
+
+
+
+var rent = [{
+    "type": "Feature",
+    "properties": {
+        "city": "Austin",
+        "schools": true,
+        "pop" : false,
+        "transportation" : false,
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-97.771258, 30.326374]
+    }
+}, {
+    "type": "Feature",
+    "properties": {
+      "City": "San Francisco",
+      "schools": true,
+      "pop": false,
+      "transportation": false,
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-122.417481, 37.776646]
+    }
+  },
+  {
+      "type": "Feature",
+      "properties": {
+        "City": "New York",
+        "schools": false,
+        "pop": true,
+        "transportation": true,
+      },
+      "geometry": {
+          "type": "Point",
+          "coordinates": [-74.018244, 40.68863]
+      }
+  }, {
+      "type": "Feature",
+      "properties": {
+        "City": "Boston",
+        "schools": true,
+        "pop": true,
+        "transportation": false,
+      },
+      "geometry": {
+          "type": "Point",
+          "coordinates": [-71.026964, 42.370567]
+      }
+    },{
+        "type": "Feature",
+        "properties": {
+          "City": "Oakland",
+          "schools": false,
+          "pop": false,
+          "transportation": false,
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-122.223779, 37.786027]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+          "City": "Washington",
+          "schools": true,
+          "pop": false,
+          "transportation": false,
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-77.016719, 38.911936]
+        }
+      },{
+            "type": "Feature",
+            "properties": {
+              "City": "San Jose",
+              "schools": false,
+              "pop": false,
+              "transportation": true,
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-121.705327, 37.189396]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+              "City": "Chicago",
+              "schools": true,
+              "pop": true,
+              "transportation": false,
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-87.62213, 41.88531]
+            }
+          },{
+              "type": "Feature",
+              "properties": {
+                "City": "Los Angeles",
+                "schools": false,
+                "pop": true,
+                "transportation": true,
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [-118.248405, 33.973951]
+              }
+          }, {
+              "type": "Feature",
+              "properties": {
+                "City": "Miami",
+                "schools": false,
+                "pop": false,
+                "transportation": false,
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [-80.458168, 25.558428]
+              }
+            },{
+                  "type": "Feature",
+                  "properties": {
+                    "City": "Seattle",
+                    "schools": false,
+                    "pop": false,
+                    "transportation": true,
+                  },
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [  -121.803388,
+                        47.432251]
+                  }
+              }, {
+                  "type": "Feature",
+                  "properties": {
+                    "City": "San Diego",
+                    "schools": false,
+                    "pop": false,
+                    "transportation": true,
+                  },
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [  -117.170912,
+                        32.724103]
+                  }
+                }, {
+                    "type": "Feature",
+                    "properties": {
+                      "City": "Denver",
+                      "schools": false,
+                      "pop": false,
+                      "transportation": true,
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [    -104.856808,
+                            39.726303]
+                    }
+                }, {
+                    "type": "Feature",
+                    "properties": {
+                      "City": "Atlanta",
+                      "schools": false,
+                      "pop": false,
+                      "transportation": false,
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [  -84.47405,
+                          33.844371]
+                    }
+                  },{
+                      "type": "Feature",
+                      "properties": {
+                        "City": "Baltimore",
+                        "schools": false,
+                        "pop": false,
+                        "transportation": false,
+                      },
+                      "geometry": {
+                          "type": "Point",
+                          "coordinates": [  -76.623489,
+                            39.296536]
+                      }
+                  }, {
+                      "type": "Feature",
+                      "properties": {
+                        "City": "Philadelphia",
+                        "schools": false,
+                        "pop": true,
+                        "transportation": false,
+                      },
+                      "geometry": {
+                          "type": "Point",
+                          "coordinates": [    -75.11787,
+                              40.001811]
+                      }
+                    },{
+                          "type": "Feature",
+                          "properties": {
+                            "City": "Long Beach",
+                            "schools": false,
+                            "pop": false,
+                            "transportation": false,
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-118.200957,
+                              33.804309]
+                          }
+                      }, {
+                          "type": "Feature",
+                          "properties": {
+                            "City": "Dallas",
+                            "schools": false,
+                            "pop": false,
+                            "transportation": false,
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-96.790329,
+                              32.781179]
+                          }
+                        },{
+                            "type": "Feature",
+                            "properties": {
+                              "City": "Minneapolis",
+                              "schools": false,
+                              "pop": false,
+                              "transportation": false,
+                            },
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [  -93.269097,
+                                  44.984577]
+                            }
+                        }, {
+                            "type": "Feature",
+                            "properties": {
+                              "City": "Houston",
+                              "schools": false,
+                              "pop": true,
+                              "transportation": false,
+                            },
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-95.309789,
+                                29.813142]
+                            }
+}];

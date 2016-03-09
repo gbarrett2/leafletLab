@@ -7,7 +7,7 @@
 //5. For each feature, determine its value for the selected attribute
 //6. Give each feature's circle marker a radius based on its attribute value
 
-  var attributes = [];
+var attributes = [];
 //Step 1:
 //function to instantiate the Leaflet map
 function createMap(){
@@ -66,8 +66,6 @@ function createMap(){
     //call getData function
     getData(map);
     createLegend(map,attributes);
-    getCircleValues(map, attribute);
-    updateLegend(map, attribute);
 };
 
 
@@ -245,16 +243,6 @@ function createPropSymbols(data, map, attributes){
 
 //Step 1: Create new sequence controls
 function createSequenceControls(map){
-    // //create range input element (slider)
-    // $('#panel').append('<input class="range-slider" type="range">');
-    // //below Example 3.4...add skip buttons
-    // $('#panel').append('<button class="skip" id="reverse">Reverse</button>');
-    // $('#panel').append('<button class="skip" id="forward">Skip</button>');
-    //Below Example 3.5...replace button content with images
-    //   $('#reverse').html('<img src="data/reversearrow.png">');
-    //   $('#forward').html('<img src="data/forwardarrow.png">');
-    //set slider attributes
-
     var SequenceControl = L.Control.extend({
         options: {
             position: 'bottomleft'
@@ -268,7 +256,9 @@ function createSequenceControls(map){
             //add skip buttons
             $(container).append('<button class="skip" id="reverse" title="Reverse">Reverse</button>');
             $(container).append('<button class="skip" id="forward" title="Forward">Skip</button>');
-            // ... initialize other DOM elements, add listeners, etc.
+
+            //  $('#reverse').html('<img src="data/reversearrow.png">');
+            //  $('#forward').html('<img src="data/forwardarrow.png">');
 
               //kill any mouse event listeners on the map
               $(container).on('mousedown dblclick', function(e){
@@ -286,7 +276,6 @@ function createSequenceControls(map){
        value: 0,
        step: 1
    });
-   //Below Example 3.6 in createSequenceControls()
     //Step 5: click listener for buttons
     $('.skip').click(function(){
       //get the old index value
@@ -328,7 +317,6 @@ function updatePropSymbols(map, attribute){
  if (layer.feature && layer.feature.properties[attribute]){
       //access feature properties
            var props = layer.feature.properties;
-
            //update each feature's radius based on new attribute values
            var radius = calcPropRadius(props[attribute]);
            layer.setRadius(radius);

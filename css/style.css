@@ -47,10 +47,10 @@
 }
 
  body{
-   background-color: rgba(59,0,162,0.8);
+   background-color: rgba(59,0,162,0.6);
    font-size: 20px;
    margin: 5px auto;
-   font-family: Andale Mono, serif;
+   font-family:sans-serif;
    color: black;
    font-weight: normal;
    font-style: normal;
@@ -63,11 +63,11 @@ title{
   font-size: 35px;
   display: inline-block;
   margin: 5px auto;
-  font-family:sans-serif;
+  font-family:Georgia;
   color: black;
   font: bold;
   padding: 20px;
-  padding-left: 2%;
+  padding-left: 5%;
   font-weight: bold;
   font-stretch: expanded;
 }
